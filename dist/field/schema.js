@@ -3,13 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Field = void 0;
-
-var _grim = require("grim.lib");
-
-var _schema = require("./schema");
-
-var _uischema = require("./uischema");
+exports.Schema = void 0;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -19,40 +13,42 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var uid = new _grim.UID.Queue();
-
-var Field =
+var Schema =
 /*#__PURE__*/
 function () {
-  function Field(schema, uischema, events) {
-    _classCallCheck(this, Field);
+  function Schema(props) {
+    _classCallCheck(this, Schema);
 
-    _defineProperty(this, "uid", uid.getNext());
+    _defineProperty(this, "type", void 0);
 
-    _defineProperty(this, "schema", void 0);
+    _defineProperty(this, "error", void 0);
 
-    _defineProperty(this, "uischema", void 0);
-
-    _defineProperty(this, "events", void 0);
-
-    this.schema = new _schema.Schema(schema);
-    this.uischema = new _uischema.UISchema(uischema);
-    this.events = new _grim.Callbacks(events);
+    var type = props.type,
+        error = props.error;
+    this.type = type;
+    this.error = error;
   }
 
-  _createClass(Field, [{
-    key: "getSchema",
-    value: function getSchema() {
-      return this.schema;
+  _createClass(Schema, [{
+    key: "getType",
+    value: function getType() {
+      return this.type;
+    } // region error
+
+  }, {
+    key: "getError",
+    value: function getError() {
+      return this.error;
     }
   }, {
-    key: "getUISchema",
-    value: function getUISchema() {
-      return this.uischema;
-    }
+    key: "setError",
+    value: function setError(message) {
+      this.error = message;
+    } // endregion
+
   }]);
 
-  return Field;
+  return Schema;
 }();
 
-exports.Field = Field;
+exports.Schema = Schema;

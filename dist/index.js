@@ -9,5 +9,12 @@ Object.defineProperty(exports, "Field", {
     return _field.Field;
   }
 });
+exports.Render = void 0;
 
 var _field = require("./field/field");
+
+var Render = _interopRequireWildcard(require("./render/render"));
+
+exports.Render = Render;
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
