@@ -9,6 +9,9 @@ const schema = {
 };
 
 ReactDom.render(<form>
+    <Form.Render.Field
+        field={schema.firstName}
+    />
     <Form.Render.FormGroup field={schema.firstName}>
         <Form.Render.FormGroupLabel field={schema.firstName} />
         <input

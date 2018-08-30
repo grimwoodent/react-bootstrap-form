@@ -41,6 +41,11 @@ function () {
   }
 
   _createClass(Field, [{
+    key: "getUID",
+    value: function getUID() {
+      return this.uid;
+    }
+  }, {
     key: "getSchema",
     value: function getSchema() {
       return this.schema;

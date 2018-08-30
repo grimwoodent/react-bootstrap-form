@@ -1,6 +1,6 @@
 import { TFieldType } from './type';
 
-interface ISchemaProps {
+export interface ISchemaProps {
     type?: TFieldType;
     error?: string;
 }
